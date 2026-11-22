@@ -17,5 +17,5 @@ try {
     );
 
 } catch (PDOException $erro) {
-    die('Não foi possível conectar ao banco de dados: ' . $erro->getMessage());
+    die('Não foi possível cofrfgrefrenectar ao banco de dados: ' . $erro->getMessage());
 }
