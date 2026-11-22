@@ -1,0 +1,180 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Equação do Segundo Grau</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="topbar">
+        <a href="#" class="brand">ÁLGEBRA<span>.</span></a>
+        <span class="edition">MATEMÁTICA · FERRAMENTA 02</span>
+    </header>
+
+    <main class="container">
+
+        <section class="intro">
+            <p class="eyebrow">PROJETO 05 / JAVASCRIPT</p>
+            <h1>Equações<br>de segundo grau.</h1>
+            <p class="description">
+                Calcule o discriminante e encontre as raízes reais
+                de uma equação utilizando a fórmula de Bhaskara.
+            </p>
+        </section>
+
+        <section class="solver">
+
+            <div class="section-heading">
+                <div>
+                    <p class="eyebrow">RESOLUÇÃO MATEMÁTICA</p>
+                    <h2>Insira os coeficientes</h2>
+                </div>
+                <span class="status">Δ = b² − 4ac</span>
+            </div>
+
+            <div class="equation">
+                <span>ax²</span>
+                <span>+</span>
+                <span>bx</span>
+                <span>+</span>
+                <span>c</span>
+                <span>= 0</span>
+            </div>
+
+            <form id="equationForm">
+
+                <div class="coefficient-grid">
+
+                    <div class="field">
+                        <label for="coefficientA">Coeficiente A</label>
+                        <input
+                            type="number"
+                            id="coefficientA"
+                            step="any"
+                            placeholder="Ex.: 1"
+                            required
+                        >
+                        <small>Termo quadrático</small>
+                    </div>
+
+                    <div class="field">
+                        <label for="coefficientB">Coeficiente B</label>
+                        <input
+                            type="number"
+                            id="coefficientB"
+                            step="any"
+                            placeholder="Ex.: -5"
+                            required
+                        >
+                        <small>Termo linear</small>
+                    </div>
+
+                    <div class="field">
+                        <label for="coefficientC">Coeficiente C</label>
+                        <input
+                            type="number"
+                            id="coefficientC"
+                            step="any"
+                            placeholder="Ex.: 6"
+                            required
+                        >
+                        <small>Termo independente</small>
+                    </div>
+
+                </div>
+
+                <div class="actions">
+                    <button type="submit" class="solve-button">
+                        Resolver equação <span>→</span>
+                    </button>
+
+                    <button type="reset" class="clear-button">
+                        Limpar
+                    </button>
+                </div>
+
+            </form>
+
+            <div id="result" class="result hidden" aria-live="polite">
+
+                <div class="result-heading">
+                    <p class="eyebrow">RESULTADO DO CÁLCULO</p>
+                    <span id="rootStatus" class="root-status"></span>
+                </div>
+
+                <div class="delta-area">
+                    <span class="result-label">Discriminante (Δ)</span>
+                    <strong id="deltaValue">—</strong>
+                </div>
+
+                <div class="roots">
+                    <div class="root-item">
+                        <span class="result-label">Primeira raiz (x₁)</span>
+                        <strong id="root1">—</strong>
+                    </div>
+
+                    <div class="root-item">
+                        <span class="result-label">Segunda raiz (x₂)</span>
+                        <strong id="root2">—</strong>
+                    </div>
+                </div>
+
+                <div class="explanation">
+                    <span class="result-label">Análise matemática</span>
+                    <p id="explanationText"></p>
+                </div>
+
+            </div>
+
+        </section>
+
+        <section class="formula-section">
+
+            <p class="eyebrow">REFERÊNCIA</p>
+            <h2>Fórmula de Bhaskara</h2>
+
+            <div class="formula">
+                <span>x =</span>
+                <span class="fraction">
+                    <span>−b ± √Δ</span>
+                    <span>2a</span>
+                </span>
+            </div>
+
+            <p class="formula-note">
+                O valor de Δ determina a quantidade de raízes reais
+                da equação.
+            </p>
+
+            <div class="delta-reference">
+                <div>
+                    <strong>Δ &gt; 0</strong>
+                    <span>Duas raízes reais diferentes</span>
+                </div>
+
+                <div>
+                    <strong>Δ = 0</strong>
+                    <span>Uma raiz real dupla</span>
+                </div>
+
+                <div>
+                    <strong>Δ &lt; 0</strong>
+                    <span>Nenhuma raiz real</span>
+                </div>
+            </div>
+
+        </section>
+
+    </main>
+
+    <footer>
+        <span>ÁLGEBRA · EQUAÇÕES</span>
+        <span>DESENVOLVIDO COM HTML, CSS E JS</span>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

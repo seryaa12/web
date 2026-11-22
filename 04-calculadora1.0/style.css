@@ -1,0 +1,275 @@
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap');
+
+:root {
+    --paper: #f3f0e9;
+    --white: #faf9f5;
+    --ink: #18243a;
+    --muted: #777c82;
+    --blue: #315fbd;
+    --line: #d9d6ce;
+    --soft-blue: #e5eaf3;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: 'Manrope', sans-serif;
+}
+
+.topbar {
+    height: 76px;
+    padding: 0 8%;
+    border-bottom: 1px solid var(--line);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.brand {
+    color: var(--ink);
+    text-decoration: none;
+    font-size: 19px;
+    font-weight: 800;
+    letter-spacing: -1px;
+}
+
+.brand span {
+    color: var(--blue);
+}
+
+.edition,
+.eyebrow,
+footer,
+.status {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 1px;
+}
+
+.edition,
+footer {
+    color: var(--muted);
+}
+
+.container {
+    width: min(100% - 40px, 900px);
+    margin: auto;
+}
+
+.intro {
+    padding: 85px 0 65px;
+    border-bottom: 1px solid var(--line);
+}
+
+.eyebrow {
+    color: var(--blue);
+    margin-bottom: 18px;
+}
+
+.intro h1 {
+    font-size: clamp(42px, 7vw, 76px);
+    line-height: 1.02;
+    letter-spacing: -4px;
+    font-weight: 800;
+}
+
+.description {
+    max-width: 510px;
+    margin-top: 25px;
+    color: var(--muted);
+    line-height: 1.8;
+    font-size: 14px;
+}
+
+.calculator-section {
+    padding: 55px 0;
+    border-bottom: 1px solid var(--line);
+}
+
+.section-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    margin-bottom: 30px;
+    gap: 15px;
+}
+
+.section-heading h2 {
+    font-size: 25px;
+    letter-spacing: -1px;
+}
+
+.status {
+    color: var(--blue);
+    font-size: 10px;
+}
+
+.calculator {
+    width: min(100%, 390px);
+    margin: 0 auto;
+    padding: 17px;
+    background: var(--white);
+    border: 1px solid var(--line);
+}
+
+.display {
+    min-height: 115px;
+    padding: 20px 14px;
+    margin-bottom: 14px;
+    background: var(--soft-blue);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-end;
+    overflow: hidden;
+}
+
+.previous {
+    min-height: 22px;
+    color: var(--muted);
+    font-family: 'DM Mono', monospace;
+    font-size: 13px;
+}
+
+.current {
+    max-width: 100%;
+    overflow-x: auto;
+    color: var(--ink);
+    font-size: clamp(30px, 8vw, 42px);
+    font-weight: 700;
+    letter-spacing: -2px;
+    white-space: nowrap;
+}
+
+.keys {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 8px;
+}
+
+.key {
+    min-height: 65px;
+    border: 1px solid var(--line);
+    background: #f5f3ed;
+    color: var(--ink);
+    font-family: 'Manrope', sans-serif;
+    font-size: 19px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background .15s, color .15s;
+}
+
+.key:hover {
+    background: #e8e5dd;
+}
+
+.key:active {
+    transform: scale(.97);
+}
+
+.key.utility {
+    color: var(--blue);
+    background: #e9edf5;
+}
+
+.key.operator {
+    background: var(--ink);
+    border-color: var(--ink);
+    color: white;
+}
+
+.key.operator:hover {
+    background: var(--blue);
+}
+
+.key.equals {
+    background: var(--blue);
+    border-color: var(--blue);
+    color: white;
+}
+
+.key.equals:hover {
+    background: #244b9b;
+}
+
+.key.zero {
+    grid-column: span 2;
+}
+
+.hint {
+    margin-top: 18px;
+    text-align: center;
+    color: var(--muted);
+    font-size: 11px;
+}
+
+.operations {
+    padding: 55px 0;
+}
+
+.operation-list {
+    border-top: 1px solid var(--line);
+}
+
+.operation-list div {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    padding: 17px 5px;
+    border-bottom: 1px solid var(--line);
+    font-size: 13px;
+}
+
+.operation-list span {
+    color: var(--muted);
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+}
+
+.operation-list strong {
+    margin-left: auto;
+    color: var(--blue);
+    font-size: 20px;
+}
+
+footer {
+    padding: 28px 8%;
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    font-size: 9px;
+}
+
+@media (max-width: 600px) {
+    .topbar {
+        padding: 0 20px;
+    }
+
+    .edition {
+        font-size: 9px;
+    }
+
+    .intro {
+        padding: 65px 0 45px;
+    }
+
+    .intro h1 {
+        letter-spacing: -2px;
+    }
+
+    .key {
+        min-height: 58px;
+    }
+
+    footer {
+        padding: 25px 20px;
+        flex-direction: column;
+    }
+}

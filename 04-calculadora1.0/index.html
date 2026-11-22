@@ -1,0 +1,99 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="topbar">
+        <a href="#" class="brand">CALC<span>.</span></a>
+        <span class="edition">FERRAMENTA MATEMÁTICA · 01</span>
+    </header>
+
+    <main class="container">
+
+        <section class="intro">
+            <p class="eyebrow">PROJETO 04 / JAVASCRIPT</p>
+            <h1>Calculadora<br>de operações.</h1>
+            <p class="description">
+                Uma ferramenta simples para realizar cálculos matemáticos
+                utilizando as quatro operações fundamentais.
+            </p>
+        </section>
+
+        <section class="calculator-section">
+
+            <div class="section-heading">
+                <div>
+                    <p class="eyebrow">CALCULADORA BÁSICA</p>
+                    <h2>Realize seu cálculo</h2>
+                </div>
+                <span class="status">ONLINE</span>
+            </div>
+
+            <div class="calculator">
+
+                <div class="display">
+                    <div id="previous" class="previous"></div>
+                    <div id="current" class="current">0</div>
+                </div>
+
+                <div class="keys">
+                    <button class="key utility" data-action="clear">AC</button>
+                    <button class="key utility" data-action="delete">DEL</button>
+                    <button class="key utility" data-action="percent">%</button>
+                    <button class="key operator" data-operation="divide">÷</button>
+
+                    <button class="key" data-number="7">7</button>
+                    <button class="key" data-number="8">8</button>
+                    <button class="key" data-number="9">9</button>
+                    <button class="key operator" data-operation="multiply">×</button>
+
+                    <button class="key" data-number="4">4</button>
+                    <button class="key" data-number="5">5</button>
+                    <button class="key" data-number="6">6</button>
+                    <button class="key operator" data-operation="subtract">−</button>
+
+                    <button class="key" data-number="1">1</button>
+                    <button class="key" data-number="2">2</button>
+                    <button class="key" data-number="3">3</button>
+                    <button class="key operator" data-operation="add">+</button>
+
+                    <button class="key zero" data-number="0">0</button>
+                    <button class="key" data-action="decimal">,</button>
+                    <button class="key equals" data-action="calculate">=</button>
+                </div>
+
+            </div>
+
+            <p class="hint">
+                Você também pode utilizar o teclado do computador.
+            </p>
+
+        </section>
+
+        <section class="operations">
+            <p class="eyebrow">OPERAÇÕES DISPONÍVEIS</p>
+
+            <div class="operation-list">
+                <div><span>01</span> Adição <strong>+</strong></div>
+                <div><span>02</span> Subtração <strong>−</strong></div>
+                <div><span>03</span> Multiplicação <strong>×</strong></div>
+                <div><span>04</span> Divisão <strong>÷</strong></div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <span>CALC · CALCULADORA BÁSICA</span>
+        <span>DESENVOLVIDO COM HTML, CSS E JS</span>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

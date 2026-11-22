@@ -1,0 +1,408 @@
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap');
+
+:root {
+    --paper: #f3f0e9;
+    --white: #faf9f5;
+    --ink: #18243a;
+    --muted: #777c82;
+    --blue: #315fbd;
+    --line: #d9d6ce;
+    --soft-blue: #e5eaf3;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: 'Manrope', sans-serif;
+}
+
+.topbar {
+    height: 76px;
+    padding: 0 8%;
+    border-bottom: 1px solid var(--line);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.brand {
+    color: var(--ink);
+    text-decoration: none;
+    font-size: 19px;
+    font-weight: 800;
+    letter-spacing: -1px;
+}
+
+.brand span {
+    color: var(--blue);
+}
+
+.edition,
+.eyebrow,
+footer,
+.status,
+.result-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 1px;
+}
+
+.edition,
+footer {
+    color: var(--muted);
+}
+
+.container {
+    width: min(100% - 40px, 900px);
+    margin: auto;
+}
+
+.intro {
+    padding: 85px 0 65px;
+    border-bottom: 1px solid var(--line);
+}
+
+.eyebrow {
+    color: var(--blue);
+    margin-bottom: 18px;
+}
+
+.intro h1 {
+    font-size: clamp(42px, 7vw, 76px);
+    line-height: 1.02;
+    letter-spacing: -4px;
+    font-weight: 800;
+}
+
+.description {
+    max-width: 510px;
+    margin-top: 25px;
+    color: var(--muted);
+    line-height: 1.8;
+    font-size: 14px;
+}
+
+.solver {
+    padding: 55px 0;
+    border-bottom: 1px solid var(--line);
+}
+
+.section-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.section-heading h2,
+.formula-section h2 {
+    font-size: 25px;
+    letter-spacing: -1px;
+}
+
+.status {
+    color: var(--blue);
+    font-size: 10px;
+}
+
+.equation {
+    padding: 25px;
+    margin-bottom: 30px;
+    background: var(--soft-blue);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    font-family: 'DM Mono', monospace;
+    font-size: clamp(19px, 4vw, 29px);
+}
+
+.equation span:nth-child(odd) {
+    color: var(--blue);
+}
+
+.coefficient-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.field label {
+    display: block;
+    margin-bottom: 9px;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.field input {
+    width: 100%;
+    height: 50px;
+    padding: 0 14px;
+    border: 1px solid var(--line);
+    background: var(--white);
+    color: var(--ink);
+    font-family: 'DM Mono', monospace;
+    font-size: 15px;
+    outline: none;
+    border-radius: 0;
+}
+
+.field input:focus {
+    border-color: var(--blue);
+}
+
+.field small {
+    display: block;
+    margin-top: 8px;
+    color: var(--muted);
+    font-size: 10px;
+}
+
+.actions {
+    display: flex;
+    gap: 12px;
+    margin-top: 30px;
+}
+
+.solve-button,
+.clear-button {
+    height: 54px;
+    padding: 0 20px;
+    font-family: inherit;
+    font-size: 12px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.solve-button {
+    flex: 1;
+    border: none;
+    background: var(--ink);
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background .2s;
+}
+
+.solve-button:hover {
+    background: var(--blue);
+}
+
+.solve-button span {
+    font-size: 20px;
+}
+
+.clear-button {
+    border: 1px solid var(--line);
+    background: transparent;
+    color: var(--ink);
+}
+
+.clear-button:hover {
+    background: #e8e5dd;
+}
+
+.result {
+    margin-top: 35px;
+    padding: 25px;
+    border: 1px solid var(--line);
+    background: var(--white);
+}
+
+.hidden {
+    display: none;
+}
+
+.result-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 25px;
+}
+
+.result-heading .eyebrow {
+    margin-bottom: 0;
+}
+
+.root-status {
+    color: var(--blue);
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+}
+
+.delta-area {
+    padding: 20px;
+    background: var(--soft-blue);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.result-label {
+    color: var(--muted);
+    font-size: 10px;
+}
+
+.delta-area strong {
+    color: var(--blue);
+    font-size: 25px;
+}
+
+.roots {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.root-item {
+    padding: 20px;
+    border: 1px solid var(--line);
+}
+
+.root-item strong {
+    display: block;
+    margin-top: 12px;
+    font-size: 24px;
+    letter-spacing: -1px;
+    overflow-wrap: anywhere;
+}
+
+.explanation {
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid var(--line);
+}
+
+.explanation p {
+    margin-top: 10px;
+    color: var(--muted);
+    font-size: 13px;
+    line-height: 1.7;
+}
+
+.formula-section {
+    padding: 55px 0;
+}
+
+.formula {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    padding: 35px 15px;
+    margin-top: 25px;
+    background: var(--soft-blue);
+    color: var(--ink);
+    font-family: 'DM Mono', monospace;
+    font-size: 23px;
+}
+
+.fraction {
+    display: inline-flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.fraction span:first-child {
+    padding: 0 12px 8px;
+    border-bottom: 1px solid var(--ink);
+}
+
+.fraction span:last-child {
+    padding-top: 8px;
+}
+
+.formula-note {
+    margin: 20px 0 25px;
+    color: var(--muted);
+    font-size: 12px;
+    line-height: 1.7;
+}
+
+.delta-reference {
+    border-top: 1px solid var(--line);
+}
+
+.delta-reference div {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    padding: 17px 5px;
+    border-bottom: 1px solid var(--line);
+    font-size: 12px;
+}
+
+.delta-reference strong {
+    color: var(--blue);
+    font-family: 'DM Mono', monospace;
+}
+
+.delta-reference span {
+    color: var(--muted);
+    text-align: right;
+}
+
+footer {
+    padding: 28px 8%;
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    font-size: 9px;
+}
+
+@media (max-width: 600px) {
+    .topbar {
+        padding: 0 20px;
+    }
+
+    .edition {
+        font-size: 9px;
+    }
+
+    .intro {
+        padding: 65px 0 45px;
+    }
+
+    .intro h1 {
+        letter-spacing: -2px;
+    }
+
+    .coefficient-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .section-heading {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .roots {
+        grid-template-columns: 1fr;
+    }
+
+    .delta-reference div {
+        flex-direction: column;
+        gap: 7px;
+    }
+
+    .delta-reference span {
+        text-align: left;
+    }
+
+    footer {
+        padding: 25px 20px;
+        flex-direction: column;
+    }
+}
