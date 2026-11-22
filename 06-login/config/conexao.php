@@ -1,8 +1,7 @@
-
 <?php
 
 $host = 'localhost';
-$banco = 'sistema_login';
+$banco = 'login';
 $usuario = 'root';
 $senha = '';
 
